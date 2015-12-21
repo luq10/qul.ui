@@ -1,0 +1,22 @@
+doctype html
+html(lang='en', ng-app='qul.ui')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width')
+        title Qul UI
+        // build:css(dist) styles/styles.min.css
+        link(rel='stylesheet', href='styles/styles.css')
+        // endbuild
+    body
+        div(ui-view)
+
+    // build:js(dist) js/all.min.js
+
+    // bower:js
+    // run `gulp inject` to automatically populate bower script dependencies
+    // endbower
+
+    // inject:js
+    // endinject
+
+    // endbuild

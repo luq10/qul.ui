@@ -1,0 +1,30 @@
+h1 Tabs
+
+h2 1. Example
+
+qul-tabset(name="example")
+    qul-tab(title="first")
+        h4 First
+        p Lorem impas
+    qul-tab(title="second", active)
+        h4 Second
+        p Lorem impas
+    qul-tab(title="third")
+        h4 Third
+        p Lorem impas
+        a(href="", ng-click="foo()") Click here
+
+h2 2. Control tabs from controller
+p Need add "name" attribute to "qul-tabs" directive
+p You have access to method
+    code=" open(paneTitle) "
+    | and
+    code=" close(paneTitle)"
+
+ul
+    li(ng-click="openTab('first')")
+        a(href="") Open First
+    li(ng-click="openTab('second')")
+        a(href="") Open Second
+    li(ng-click="example.close('second')")
+        a(href="") Close Second

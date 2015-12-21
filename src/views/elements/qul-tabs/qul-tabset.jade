@@ -1,0 +1,8 @@
+div.tabs
+    div.tabs-navigations
+        ul
+            li(
+                ng-repeat="tab in tabs track by $index"
+                ng-click="open($index)", ng-class="{active: activeIndex === $index}")
+                | {{tab.title}}
+    div.tabs-contents(ng-transclude, ng-show="null !== activeIndex")

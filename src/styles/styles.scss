@@ -1,0 +1,36 @@
+.tabs {
+  .tabs-navigations {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        padding: 6px 10px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+
+        &.active {
+          background-color: #ccc;
+          color: #000;
+          cursor: default;
+        }
+
+        &:hover {
+          background-color: #444;
+        }
+
+        &.active:hover {
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+
+  .tabs-contents {
+    padding: 6px 10px;
+    border: 1px solid #333;
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+bower_components/
+.sass-cache/
+.tmp/
+dist/
+.idea
+src/**/*.html
+src/styles/**/*.css
+src/styles/**/*.css.map
+.DS_Store
+npm-debug.log
