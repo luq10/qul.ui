@@ -19,10 +19,29 @@ module.exports = function (options) {
      * Create elements.js from /views/elements/*
      */
     gulp.task('angular-template-cache-elements', function (cb) {
+        runSequence(
+            [
+                'angular-template-cache-elements-general',
+                'angular-template-cache-elements-modules'
+            ],
+            cb
+        );
+    });
+
+    gulp.task('angular-template-cache-elements-general', function (cb) {
         return gulp.src(options.tmp + '/views/elements/**/*.html')
             .pipe(templateCache({
                 root:     'views/elements/',
                 filename: 'elements.js'
+            }))
+            .pipe(gulp.dest(options.tmp + '/js/templates'));
+    });
+
+    gulp.task('angular-template-cache-elements-modules', function (cb) {
+        return gulp.src(options.tmp + '/js/*/views/elements/**/*.html')
+            .pipe(templateCache({
+                root:     '',
+                filename: 'modules-elements.js'
             }))
             .pipe(gulp.dest(options.tmp + '/js/templates'));
     });

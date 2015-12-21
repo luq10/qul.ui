@@ -5,7 +5,7 @@
         .directive('qulTabset', function () {
             return {
                 restrict:    'E',
-                templateUrl: 'views/elements/qul-tabs/qul-tabset.html',
+                templateUrl: 'qul.ui.tabs/views/elements/qul-tabset.html',
                 transclude: true,
                 replace: true,
                 scope: {

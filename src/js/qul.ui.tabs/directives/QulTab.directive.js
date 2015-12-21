@@ -6,7 +6,7 @@
             return {
                 restrict: 'E',
                 require: '^qulTabset',
-                templateUrl: 'views/elements/qul-tabs/qul-tab.html',
+                templateUrl: 'qul.ui.tabs/views/elements/qul-tab.html',
                 transclude: true,
                 replace: true,
                 scope: {},

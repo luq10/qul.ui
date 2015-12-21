@@ -3,7 +3,9 @@
 
     angular.module('qul.ui', [
         'ui.router',
-        'templates'
+        'templates',
+
+        'qul.ui.tabs'
     ])
 
         // Configure UI router.
