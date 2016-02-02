@@ -12,13 +12,7 @@ module.exports = function (options) {
      */
     gulp.task('inject', function () {
         var wiredepOptions = {
-            directory: 'bower_components',
-            exclude:   [/jquery/, /bootstrap-sass-official/],
-            overrides: {
-                'Sortable': {
-                    'main': ['Sortable.js', 'ng-sortable.js']
-                }
-            }
+            directory: 'bower_components'
         };
 
         var injectScripts = gulp.src([

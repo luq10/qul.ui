@@ -1,9 +1,6 @@
 (function () {
     'use strict';
 
-    /**
-     * Main view when user is not login
-     */
     angular.module('qul.ui')
         .controller('TabsController', function ($scope) {
             $scope.foo      = foo;

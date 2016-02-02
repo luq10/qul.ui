@@ -1,0 +1,161 @@
+div.container
+    ul.nav.nav-pills
+        li(ui-sref-active="active")
+            a(role="presentation", ui-sref="gui.tabs") Tabs
+        li(ui-sref-active="active")
+            a(role="presentation", ui-sref="gui.validation") Validation
+
+div.container
+
+    h1 Qul.UI.Validation
+
+    // Example 1
+    div
+        h3 Simple example
+
+        form(
+            name="form1"
+            novalidate
+            ng-submit="send1(form1, data1)")
+
+            div.form-group
+                input(type="checkbox", ng-model="isRequired", id="is-required-input3")
+                label(for="is-required-input3") Required input3
+
+            p
+                strong input1
+                code input(qul-validation)
+
+            div
+                input.form-control(
+                name="input1"
+                ng-model="data1.input1"
+                qul-validation)
+
+            p
+                strong input2
+                code input(required, qul-validation)
+
+            div
+                input.form-control(
+                name="input2"
+                ng-model="data1.input2"
+                required
+                qul-validation)
+
+            p
+                strong input3
+                code input(ng-required="isRequired", qul-validation)
+
+            div
+                input.form-control(
+                name="input3"
+                ng-model="data1.input3"
+                ng-required="isRequired"
+                qul-validation)
+
+            div.row
+                button.btn.btn-success(type="submit") Send
+
+    // Example 2
+    div
+        h3 Messages defined per form
+
+        p
+            | Form definition:
+            code form(qul-validation-messages="{required: 'Required!!', unique: 'This must be unique'}"))
+
+        form(
+            name="form2"
+            novalidate
+            ng-submit="send2(form2, data2)"
+            qul-validation-messages="{required: 'Required!!', unique: 'This must be unique'}")
+
+            p
+                strong input1
+                code input(required, qul-validation)
+
+            div
+                input.form-control(
+                name="input1"
+                ng-model="data2.input1"
+                required
+                qul-validation)
+
+            p
+                strong input2
+                code input(required, qul-validation) Is filled always invalid, not unique
+
+            div
+                input.form-control(
+                name="input2"
+                ng-model="data2.input2",
+                required
+                qul-validation)
+
+            div.row
+                button.btn.btn-success(type="submit") Send
+
+    // Example 3
+    div
+        h3 Different inputs and validation options
+        form(
+            name="form3"
+            novalidate
+            ng-submit="send3(form3, data3)")
+
+            p
+                strong name
+                code input(required, ng-minlength="3", qul-validation)
+
+            div
+                input.form-control(
+                type="text"
+                name="name"
+                ng-model="data3.name"
+                required
+                ng-minlength="3"
+                qul-validation)
+
+            p
+                strong nick
+                code input(required, ng-minlength="3", ng-maxlength="10", qul-validation)
+
+            div
+                input.form-control(
+                type="text"
+                name="nick"
+                ng-model="data3.nick"
+                required
+                ng-minlength="3"
+                ng-maxlength="10"
+                qul-validation)
+
+            p
+                strong email
+                code input(type="email", required, qul-validation)
+
+            div
+                input.form-control(
+                type="email"
+                name="email"
+                ng-model="data3.email"
+                required
+                qul-validation)
+
+            p
+                strong age
+                code input(type="number", required, min="18", max="20", qul-validation)
+
+            div
+                input.form-control(
+                type="number"
+                name="age"
+                ng-model="data3.age"
+                required
+                min="18"
+                max="20"
+                qul-validation)
+
+            div.row
+                button.btn.btn-success(type="submit") Send

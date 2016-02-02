@@ -52,7 +52,7 @@ module.exports = function (options) {
             );
         });
 
-        gulp.watch(options.src + '/views/**/*.jade', function (event) {
+        gulp.watch(options.src + '/**/*.jade', function (event) {
             runSequence(
                 ['html'],
                 ['angular-template'],

@@ -5,7 +5,8 @@
         'ui.router',
         'templates',
 
-        'qul.ui.tabs'
+        'qul.ui.tabs',
+        'qul.ui.validation'
     ])
 
         // Configure UI router.
@@ -21,6 +22,11 @@
                     url:         '/tabs',
                     templateUrl: 'views/pages/tabs.html',
                     controller:  'TabsController'
+                })
+                .state('gui.validation', {
+                    url:         '/validation',
+                    templateUrl: 'views/pages/validation.html',
+                    controller:  'ValidationController'
                 });
 
             $urlRouterProvider.otherwise('/tabs');
